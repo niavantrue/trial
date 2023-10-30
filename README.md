@@ -1,2 +1,3 @@
 # Belajar GIT
-Saya sedang belajar menggunakan GITg
+Saya sedang belajar menggunakan GIT
+Sekarang saya mencoba untuk melakukan pull
