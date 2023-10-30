@@ -1,2 +1,2 @@
 # Belajar GIT
-Saya sedang belajar menggunakan GIT
+Saya sedang belajar menggunakan GITg
