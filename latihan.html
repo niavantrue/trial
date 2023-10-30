@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script>
+    window.onload = function () {
+      var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light2",
+        animationEnabled: true,
+        title: {
+          text: "World's Favorite Pets"
+        },
+        axisY: {
+          title: "Number of Owners",
+          suffix: "M"
+        },
+        toolTip: {
+          shared: "true"
+        },
+        legend: {
+          cursor: "pointer",
+          itemclick: toggleDataSeries
+        },
+        data: [
+          {
+            type: "spline",
+            showInLegend: true,
+            name: "Cats",
+            dataPoints: [
+              { label: "2010", y: 4.52 },
+              { label: "2012", y: 4.80 },
+              { label: "2014", y: 5.44 },
+              { label: "2016", y: 7.58 },
+              { label: "2018", y: 8.98 },
+              { label: "2020", y: 9.44 },
+              { label: "2022", y: 9.90 }
+            ]
+          },
+          {
+            type: "spline",
+            showInLegend: true,
+            name: "Dogs",
+            dataPoints: [
+              { label: "2010", y: 5.86 },
+              { label: "2012", y: 6.76 },
+              { label: "2014", y: 6.97 },
+              { label: "2016", y: 5.65 },
+              { label: "2018", y: 7.90 },
+              { label: "2020", y: 7.58 },
+              { label: "2022", y: 8.69 }
+            ]
+          },
+          {
+            type: "spline",
+            showInLegend: true,
+            name: "Fishes",
+            dataPoints: [
+              { label: "2010", y: 4.37 },
+              { label: "2012", y: 4.27 },
+              { label: "2014", y: 4.72 },
+              { label: "2016", y: 4.87 },
+              { label: "2018", y: 5.35 },
+              { label: "2020", y: 5.50 },
+              { label: "2022", y: 6.84 }
+            ]
+          },
+          {
+            type: "spline",
+            showInLegend: true,
+            name: "Hamsters",
+            dataPoints: [
+              { label: "2010", y: 6.64 },
+              { label: "2012", y: 6.31 },
+              { label: "2014", y: 6.59 },
+              { label: "2016", y: 6.95 },
+              { label: "2018", y: 7.16 },
+              { label: "2020", y: 6.40 },
+              { label: "2022", y: 7.20 }
+            ]
+          }
+        ]
+      });
+
+      chart.render();
+
+      function toggleDataSeries(e) {
+        if (typeof e.dataSeries.visible === "undefined" || e.dataSeries.visible) {
+          e.dataSeries.visible = false;
+        } else {
+          e.dataSeries.visible = true;
+        }
+        chart.render();
+      }
+    }
+  </script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 600px;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

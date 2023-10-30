@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Taylor Swift Chart</title>
+    </head>
+    <body>
+        <div id="chart" style="width:600px;height:400px;"></div>
+
+        <!--[if lt IE 9]><script src="js/excanvas.min.js"></script><![endif]--> 
+        <script src="https://cdn.jsdelivr.net/npm/flotr2@0.1.0/flotr2.min.js"></script>
+        <script>
+        window.onload = function () {
+            var SpeakNow = [
+                [2010, 0.3503],
+                [2011, 0.4506],
+                [2012, 0.5490],
+                [2013, 0.4633],
+                [2014, 0.4376],
+                [2015, 0.5583],
+                [2016, 0.5865],
+                [2017, 0.4654],
+                [2018, 0.4365],
+                [2019, 0.5676],
+                [2020, 0.5865],
+                [2021, 0.6997],
+                [2022, 0.7864],
+                [2023, 0.9453]
+            ];
+
+            var RED = [
+                [2012, 0.6490],
+                [2013, 0.5633],
+                [2014, 0.6376],
+                [2015, 0.7583],
+                [2016, 0.6865],
+                [2017, 0.6654],
+                [2018, 0.7365],
+                [2019, 0.6676],
+                [2020, 0.7865],
+                [2021, 0.8997],
+                [2022, 0.9864],
+                [2023, 0.9853]
+            ];
+
+            var Fearless = [
+                [2008, 0.6789],
+                [2009, 0.6961],
+                [2010, 0.7583],
+                [2011, 0.7001],
+                [2012, 0.6968],
+                [2013, 0.6872],
+                [2014, 0.7577],
+                [2015, 0.7290],
+                [2016, 0.5799],
+                [2017, 0.4678],
+                [2018, 0.5606],
+                [2019, 0.6620],
+                [2020, 0.6875],
+                [2021, 0.8564],
+                [2022, 0.8936],
+                [2023, 0.9864]
+            ];
+
+            Flotr.draw(
+                document.getElementById("chart"),
+                [
+                    { data: Fearless, label: "Fearless", lines: {show: true}, color: "#dec100" }, 
+                    { data: SpeakNow, label: "Speak Now", lines: {show: true}, color:"#7835a0"}, 
+                    { data: RED, label: "RED", lines: {show: true}, color:"#9a0707" },
+                ],
+                {
+                    title: "Taylor Swift's Album Statistics",
+                    grid: {horizontalLines: false, verticalLines: false},
+                    y2axis: {min: 0.01, max: 1},
+                    yaxis: {
+                        min: -0.15,
+                        max: 1.03,
+                        tickFormatter: function(val) {
+                            return val;
+                        }
+                    },
+                    xaxis: {
+                        noTicks: 7,
+                        min: 2008,
+                        max: 2023
+                    }
+                }
+            );
+        };
+        </script>
+    </body>
+</html>
